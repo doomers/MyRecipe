@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipeapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <navbar class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+      	<%= link_to "Recipe App","",class: "btn btn-log btn-success", id:"logo" %>
+      	<div class="nav_item">
+      		<%= link_to "link 1","",class: "btn btn-log btn-warning" %>
+      	</div>
+      	<div class="nav_item">
+      		<%= link_to "link 2","",class: "btn btn-log btn-warning" %>
+      	</div>
+      	<div class="nav_item">
+      		<%= link_to "link 3","",class: "btn btn-log btn-warning" %>
+      	</div>
+      </div>
+    </navbar>
+
+    <div class="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>
