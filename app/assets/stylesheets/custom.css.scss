@@ -15,13 +15,17 @@ $navbar-defaut-color: $light-orange;
 	font-weight: bold;
 
 }
+html{
+	background-color: red;
+}
 
 #logo:hover {
 	color: white;
 	text-decoration: none;
 }
 body {
-	padding-top:80px
+	background-color: red;
+	padding-top:80px;
 }
 .nav_item{
 	margin-left: 50px;
@@ -37,6 +41,7 @@ h1,h2,h3,h4{
 }
 
 h1{
+	background-color: red;
 	font-size: 3em;
 	letter-spacing: -2px;
 	margin-botton: 30px;
@@ -49,7 +54,11 @@ h2{
 	text-align: center;
 	font-weight: normal;
 }
-
+.left{
+    left-spacing:10px;
+    text-spacing:0.5px;
+	
+}
 
 
 
