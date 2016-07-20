@@ -7,14 +7,15 @@
     <% @recipes.each do |recipe| %>
       <div class="row">
         <div class="col-md-2">
-           <section  class="chef_into center">
+           <section  class="chef_info center">
            	<%= gravatar_for recipe.chef, size: 100 %>
             <h5>Chef.name <%= recipe.chef.chefs%></h5>
            </section>
+           <hr/>
         </div>	
 
         <div class="col-md-8 well">
-        	<%= link_to recipe.name, recipes_path %>
+        	<%= link_to recipe.name, recipe_path(recipe) %>
         	<p><%= recipe.summary %></p>
           <p>
             <span class = "quiet"><em><%= time_ago_in_words(recipe.created_at)  %></em></span>
