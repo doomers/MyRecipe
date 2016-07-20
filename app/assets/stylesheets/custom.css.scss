@@ -38,7 +38,7 @@ h1,h2,h3,h4{
 }
 
 h1{
-	background-color: red;
+	
 	font-size: 3em;
 	letter-spacing: -2px;
 	margin-botton: 30px;
@@ -55,6 +55,15 @@ h2{
     left-spacing:10px;
     text-spacing:0.5px;
 	
+}
+
+#table{
+	padding:20px;
+	text-alignment: right;
+}
+.class{
+	padding:50px;
+	border:100px;
 }
 
 
