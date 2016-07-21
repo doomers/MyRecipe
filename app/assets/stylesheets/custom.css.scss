@@ -86,9 +86,22 @@ input, textarea, select, .uneditable_input {
  input {
  height: auto !important
  }
+
  .close{
  margin-right: 15px;
  margin-top: 5px;
+ }
+
+ span.picture{
+ margin-top: 10px;
+ input{
+   border: 0;
+ }
+
+ }
+
+ .show_recipe {
+ margin: 10px 10px 10px 10px;
  }
 
 

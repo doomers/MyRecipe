@@ -3,7 +3,7 @@
 
   <div class ="row pull-center">
     <div class="well  col-md-12 col-md-offest-2">
-       <%= form_for(@recipe, html: {multiport: true}) do |f|%>
+       <%= form_for(@recipe, html: { multipart: true}) do |f|%>
           <%= f.label :name %>
           <%= f.text_field :name %>
 
@@ -14,7 +14,7 @@
           <%= f.text_area :description, rows:10 %>
 
           <span class="picture">
-          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'%>
+          <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
           </span>
 
           <%=f.submit(@recipe.new_record? ? 'Create Recipe' : 'Edit Recipe', class: "btn btn-success") %>
@@ -28,5 +28,5 @@
   if (size_in_megabytes > 5){
     alert('Maximum file size is 5MB, PLease choose a smaller image');
   }
-  });
+  })
   </script>
