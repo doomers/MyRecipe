@@ -1,6 +1,9 @@
-
-  <%= render "shared/page_title" ,title: 'All Recipes'%>
+  <h1>All Recipies</h1>
+  <hr/>
   
+  
+
+
     <% @recipes.each do |recipe| %>
       <div class="row">
         <div class="col-md-2">
@@ -18,5 +21,9 @@
             <span class = "quiet"><em><%= time_ago_in_words(recipe.created_at)  %></em></span>
           </p>
         </div>
+        <div class="col-md-4">
+          <%= image_tag(recipe.picture.url, size: "250x150", class="gravatar" ) if recipe.picture?  %>
+        </div>
+
       </div>
     <% end %>
