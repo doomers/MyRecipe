@@ -1,9 +1,6 @@
-  <h1>All Recipies</h1>
-  <hr/>
-  
-  
 
-
+  <%= render "shared/page_title" ,title: 'All Recipes'%>
+  
     <% @recipes.each do |recipe| %>
       <div class="row">
         <div class="col-md-2">

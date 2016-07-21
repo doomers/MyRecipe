@@ -1,35 +1,4 @@
  
-  <h3>Create a New Recipe</h3>
+   <%= render "shared/page_title" ,title: 'Create a new Recipe'%>
 
-
-<% if @recipe.errors.any? %>
-  <div class="row">
-    <div class="alert alert-danger col-md-8 col-md-offset-2">
-      <h5>Please Correct the following Errors</h5>
-        <ul>
-  	      <%  @recipe.errors.full_messages.each do |msg| %>
-  	        <li> <%= msg %> </li> 
-  	         <% end %>
-        </ul>
-    </div>
-  </div>      
-<% end %>
-
-  <br />
-
-  <div class ="row">
-    <div class="well col-md-8 col-md-offest-2">
-       <%= form_for @recipe do |f|%>
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-
-          <%= f.label :summary %>
-          <%= f.text_field :summary%>
-
-          <%= f.label :description %> 
-          <%= f.text_area :description, rows:10 %>
-
-          <%=f.submit 'Create new recipe', class: "btn btn-success" %>
-       <% end %>   
-    </div>	
-  </div>
+  <%= render 'form'%>

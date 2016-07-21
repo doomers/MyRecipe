@@ -1,6 +1,6 @@
     
 
-    <p> recipe no. is <%= @recipe.name %> </p>
+    <p> recipe name is <%= @recipe.name %> </p>
 
  <div class = "row">
    <div class="col-md-4 pull-right center">
@@ -15,9 +15,9 @@
           <p>
             <strong>Steps:</strong>
           </p>   	
-            <%= @recipe.description %>
+            <%= simple_format(@recipe.description) %>
          </div> 
     </div>
  </div>
-
+     <h4> <%= link_to "Edit This Reipe",edit_recipe_path,class: "btn btn-success" %></h4>
      <h5> <%= link_to "Return to Recipes Menu",recipes_path,class: "btn btn-warning btn-small" %> </h5>
