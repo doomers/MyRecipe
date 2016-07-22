@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
   
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.sort_by do |likes|
+     likes.thumbs_up_total
+    end.reverse
   end
 
   def show
@@ -14,7 +16,7 @@ class RecipesController < ApplicationController
 
   def create
    @recipe =Recipe.new(recipe_params)
-   @recipe.chef = Chef.find(2)
+   @recipe.chef = Chef.find(1)
 
    if @recipe.save
      flash[:success] = "Your Recipe was Successfully saved!!!"
@@ -42,9 +44,15 @@ class RecipesController < ApplicationController
   end
   def like
   @recipe =Recipe.find(params[:id])
-  Like.create(like: params[:like],chef: Chef.first, recipe: @recipe)
-  if params[:like]=='true' ?  flash[:success]="Like" : flash[:success]="Dislike"
+  like=Like.create(like: params[:like],chef: Chef.first, recipe: @recipe)
+  if like.valid?
+    if params[:like]=='true' ?  flash[:success]="Like" : flash[:success]="Dislike"
+      redirect_to :back
+    end
+  else
+    flash[:danger]="You Can Only  like/Dislike Only Once."
     redirect_to :back
+
   end
   end
 
