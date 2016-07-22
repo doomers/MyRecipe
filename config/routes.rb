@@ -7,7 +7,11 @@ Rails.application.routes.draw do
    # get '/recipes' to: 'recipes#index'
    # get  '/recipes/new' to: 'recipes#new', as: 'new_recipe'
 
-   resources :recipes
+   resources :recipes do
+     member do
+      post 'like'
+     end
+   end
 
 
 end

@@ -34,11 +34,18 @@ class RecipesController < ApplicationController
   			flash[:success] = "Your Recipe is Updated Successfully!"
   			redirect_to recipe_path(@recipe)
   			#or either     
-  			#redirect_to tecipe_path......it automatically redirect tot hat particular recipe_path
+  			#redirect_to tecipe_path......it automatically redirect to  that particular recipe_path
   		else
   			render :edit
   		end
 
+  end
+  def like
+  @recipe =Recipe.find(params[:id])
+  Like.create(like: params[:like],chef: Chef.first, recipe: @recipe)
+  if params[:like]=='true' ?  flash[:success]="Like" : flash[:success]="Dislike"
+    redirect_to :back
+  end
   end
 
   private def recipe_params
