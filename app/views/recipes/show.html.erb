@@ -4,7 +4,7 @@
 
  <div class = "row">
    <div class="col-md-4 pull-right center">
-     <%= gravatar_for @recipe.chef, size: 200 %>
+     <%=link_to (gravatar_for @recipe.chef, size: 200),chef_path(@recipe.chef) %>
      <p>
      	<h5>Brought to you by: <%= @recipe.chef.chefs%></h5>
      </p>
@@ -30,5 +30,7 @@
          </div> 
     </div>
  </div>
+     <% if logged_in? and @recipe.chef == current_user %>
      <h4> <%= link_to "Edit This Reipe",edit_recipe_path,class: "btn btn-success" %></h4>
+     <% end %>
      <h5> <%= link_to "Return to Recipes Menu",recipes_path,class: "btn btn-warning btn-small" %> </h5>

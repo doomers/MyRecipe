@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
    belongs_to :chef
    has_many :likes
+   
    validates :chef_id, presence: true
    validates :name, presence: true
    validates :summary, presence: true

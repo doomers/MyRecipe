@@ -1,16 +1,23 @@
-  <%= render "shared/page_title" ,title: 'All Recipes'%>
-  
-  <%= will_paginate %>
+ <%= render "shared/page_title" ,title: 'Chef:'+ @chef.chefs %>
+
+  <div class = "row">
+    <div class="col-md-4 col-md-offest-4 center">
+      <%= gravatar_for @chef, size: 200 %>
+      <hr/>
+    </div>
+   </div> 
+   <hr/>
+
+    <%= render "shared/page_title" ,title: 'Recipes belongs to him' %>
+
+
+     <%= will_paginate @recipes %>
 
 
     <% @recipes.each do |recipe| %>
       <div class="row">
         <div class="col-md-2">
-           <section  class="chef_info center">
-           	<%= link_to gravatar_for(recipe.chef, size: 100), chef_path(recipe.chef) %>
-            <h5>Chef.name <%= recipe.chef.chefs%></h5>
-           </section>
-           <hr/>
+          
         </div>	
 
         <div class="col-md-6 well">
@@ -38,4 +45,4 @@
       </div>
     <% end %>
 
-    <%= will_paginate %>
+    <%= will_paginate  @recipes%>
