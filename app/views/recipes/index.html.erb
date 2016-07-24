@@ -1,7 +1,7 @@
   <h1>All Recipies</h1>
   <hr/>
   
-  
+  <%= will_paginate %>
 
 
     <% @recipes.each do |recipe| %>
@@ -18,7 +18,10 @@
         	<%= link_to recipe.name, recipe_path(recipe) %>
         	<p><%= recipe.summary %></p>
           <p>
-            <span class = "quiet"><em><%= time_ago_in_words(recipe.created_at)  %></em></span>
+            <span class = "quiet"><em>Created:&nbsp<%= time_ago_in_words(recipe.created_at)  %></em>&nbsp ago</span>
+          </p>
+          <p>
+            <span class = "quiet"><em>Updated:&nbsp<%= time_ago_in_words(recipe.updated_at)  %></em>&nbsp ago</span>
           </p>
            <div class="pull-right">
               <%= link_to like_recipe_path(recipe, like: true), method: :post do  %>
@@ -35,3 +38,5 @@
 
       </div>
     <% end %>
+
+    <%= will_paginate %>
