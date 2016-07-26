@@ -40,7 +40,7 @@ class RecipesController < ApplicationController
 
   end
   def like
-  like=Like.create(like: params[:like],chef: current_user, recipe: @recipe)
+  like=Like.create(like: params[:like],chef: current_user  , recipe: @recipe)
   if like.valid?
     if params[:like]=='true' ?  flash[:success]="Like" : flash[:success]="Dislike"
       redirect_to :back
